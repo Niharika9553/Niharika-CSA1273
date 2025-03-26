@@ -1,0 +1,19 @@
+Problem 1: Speedup Calculation
+A non-pipelined processor executes a program in 50 ns per instruction. A pipelined version of the same processor has 5 pipeline stages, each taking 10 ns. Assume ideal pipelining with no hazards.
+(a) Compute the speedup achieved by pipelining.
+(b) If a stall occurs once every 5 instructions, and each stall adds 10 ns, what is the new execution time per instruction?
+Solution
+(a) Speedup without stalls
+In a non-pipelined processor, each instruction takes 50 ns.
+In an ideal pipelined processor, the first instruction takes 5 × 10 = 50 ns, but after that, an instruction is completed every 10 ns.
+So, the execution time for 10 instructions:
+Non-pipelined:  ns
+Pipelined:  ns
+text{Speedup} = frac{500}{140} \approx 3.57
+(b) Speedup with stalls
+A stall occurs every 5 instructions and costs 10 ns.
+So for 10 instructions, there are 2 stalls adding 2 × 10 = 20 ns.
+The new execution time for 10 instructions:
+140 + 20 = 160 \text{ ns}
+frac{160}{10} = 16 \text{ ns}
+
