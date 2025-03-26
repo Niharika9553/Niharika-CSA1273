@@ -1,0 +1,24 @@
+Problem 2: Structural Hazard Analysis
+
+A four-stage pipeline has the following stages: Fetch (F), Decode (D), Execute (E), Write-back (W). The pipeline allows simultaneous execution except that only one instruction can access the memory (Fetch or Write-back) at a time.
+
+How many stall cycles occur in the following instruction sequence?
+
+I1: LOAD R1, 0(R2)  
+I2: ADD R3, R1, R4  
+I3: STORE R3, 0(R5)
+
+Solution
+
+I1 (LOAD) accesses memory in F (fetch) and W (write-back).
+
+I3 (STORE) needs to access memory in E.
+
+
+Since I1 and I3 both need memory access at different stages, we get a structural hazard.
+
+Pipeline Diagram (without stalls)
+
+One stall cycle occurs in cycle 5 when I3 is delayed because I1 is already using memory.
+
+Total stalls = 1 cycle.
