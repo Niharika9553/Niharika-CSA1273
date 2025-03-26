@@ -1,0 +1,35 @@
+Problem 6: Data Hazard with Forwarding and Stalling
+
+Consider a 5-stage pipeline (IF, ID, EX, MEM, WB). The following instructions execute:
+
+I1: LW R1, 0(R2)  
+I2: ADD R3, R1, R4  
+I3: SUB R5, R3, R6
+
+Assume EX-to-EX forwarding is available, but load-use hazard still causes one stall cycle.
+
+(a) How many stall cycles are required?
+
+(b) If forwarding is disabled, how many extra stalls are needed?
+
+Solution
+
+(a) With Forwarding
+
+I1 (LW) loads R1, but I2 (ADD) needs R1 in EX.
+
+Since load-use hazards cannot be avoided by forwarding, I2 stalls for 1 cycle.
+
+I3 (SUB) needs R3, but EX-to-EX forwarding provides the value immediately.
+
+
+\text{Total stalls} = 1
+
+(b) Without Forwarding
+
+I2 stalls 1 cycle because of load-use hazard.
+
+I3 (SUB) also stalls 1 cycle to get R3 from I2's WB stage.
+
+
+\text{Total stalls} = 2
