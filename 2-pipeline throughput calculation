@@ -1,0 +1,29 @@
+Problem 5: Pipeline Throughput Calculation
+
+A pipelined processor has 6 stages, and each stage takes 1 ns. The pipeline operates at 2 GHz.
+
+(a) What is the time taken to complete 1000 instructions in this pipeline?
+
+(b) What is the throughput in instructions per second?
+
+Solution
+
+(a) Execution Time for 1000 Instructions
+
+First instruction takes 6 ns (full pipeline fill).
+
+After that, one instruction completes every 1 ns.
+
+Total time for 1000 instructions:
+
+
+6 + (1000 - 1) \times 1 = 1005 \text{ ns}
+
+(b) Throughput Calculation
+
+Throughput = Instructions per second
+
+
+\text{Throughput} = \frac{\text{Total Instructions}}{\text{Total Time}} = \frac{1000}{1005 \times 10^{-9}}
+
+\approx 9.95 \times 10^8 \text{ instructions per second}
