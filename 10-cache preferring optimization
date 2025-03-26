@@ -1,0 +1,27 @@
+Problem 5: Cache Prefetching Optimization
+
+A non-prefetching cache has a miss rate of 10% and a miss penalty of 80 cycles. Adding next-line prefetching reduces the miss rate to 6%, but 30% of prefetches are useless (fetch data that isn’t used).
+
+(a) Compute AMAT before and after prefetching.
+
+(b) Does prefetching always improve performance? Why or why not?
+
+Solution
+
+(a) AMAT Calculation
+
+Without Prefetching:
+
+AMAT = 1 + (0.10 \times 80) = 1 + 8 = 9 \text{ cycles}
+
+With Prefetching:
+
+AMAT = 1 + (0.06 \times 80) + (0.30 \times 0.06 \times 80)
+
+= 1 + 4.8 + 1.44 = 7.24 \text{ cycles}
+
+(b) Does Prefetching Always Help?
+
+Yes if it reduces miss rate significantly.
+
+No if too many useless prefetches waste bandwidth and increase cache pollution.
