@@ -1,0 +1,26 @@
+Problem 4: Control Hazard (Branch Penalty)
+
+A pipeline has 5 stages: IF (Instruction Fetch), ID (Instruction Decode), EX (Execute), MEM (Memory Access), WB (Write-Back). The processor uses branch prediction with a 2-cycle penalty for incorrect predictions.
+
+A program has 20% branch instructions, and the branch predictor has 80% accuracy.
+
+(a) What is the average number of stall cycles per instruction due to control hazards?
+
+(b) What is the overall CPI (Cycles Per Instruction) if the ideal CPI is 1?
+
+Solution
+
+(a) Stall Cycles Due to Control Hazards
+
+Misprediction rate = 
+
+Branches per instruction = 
+
+Stall penalty for misprediction =  cycles
+
+{Avg. stall cycles per instruction} = 0.20 \times 0.20 \times 2 = 0.08
+
+(b) CPI Calculation
+
+{CPI} = \text{Ideal CPI} + \text{Avg. stall cycles per instruction
+{CPI} = 1 + 0.08 = 1.08
