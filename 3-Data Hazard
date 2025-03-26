@@ -1,0 +1,36 @@
+Problem 3: Data Hazard - Forwarding vs. Stalling
+
+Consider a 5-stage pipeline (IF, ID, EX, MEM, WB). The following instruction sequence is executed:
+
+I1: ADD R1, R2, R3  
+I2: SUB R4, R1, R5  
+I3: AND R6, R4, R7
+
+Assume no forwarding is available. How many stalls are needed? What if forwarding is enabled?
+
+Solution
+
+Without Forwarding
+
+I1 (ADD) writes R1 in WB (cycle 5).
+
+I2 (SUB) reads R1 in ID (cycle 2), but the correct value is not available until cycle 5.
+
+This requires 3 stall cycles between I1 and I2.
+
+Similarly, I3 (AND) depends on R4 from I2, adding 3 more stalls.
+
+
+Pipeline Diagram (Without Forwarding & With Stalls)
+
+Total stalls = 3 (for I2) + 3 (for I3) = 6 cycles
+
+With Forwarding
+
+With EX-to-EX forwarding, I2 gets R1 in cycle 3 instead of waiting until cycle 5.
+
+I3 gets R4 in cycle 6 instead of cycle 9.
+
+No stalls are required.
+
+Speedup = Better performance with forwarding.
