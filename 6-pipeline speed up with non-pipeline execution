@@ -1,0 +1,12 @@
+Problem 7: Pipeline Speedup with Non-Pipelined Execution
+
+A non-pipelined processor takes 10 cycles per instruction. A pipelined version has 5 stages and an ideal CPI of 1.2 due to some stalls.
+
+(a) Compute the speedup of the pipelined processor over the non-pipelined one.
+
+Solution
+{Speedup} = frac{Time per instruction (non-pipelined)}/{Time per instruction (pipelined)}
+
+={10}{1.2} \approx 8.33
+
+Thus, the pipelined processor is 8.33 times faster than the non-pipelined processor.
