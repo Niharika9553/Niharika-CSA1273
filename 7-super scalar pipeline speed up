@@ -1,0 +1,22 @@
+Problem 8: Superscalar Pipeline Speedup
+
+A superscalar processor can issue up to 2 instructions per cycle and has an ideal CPI of 0.5 when there are no stalls. However, due to data hazards and control hazards, 30% of cycles execute only one instruction instead of two.
+
+(a) What is the actual CPI of this processor?
+
+(b) What is the speedup over a scalar pipeline (CPI = 1.5)?
+
+Solution
+
+(a) Actual CPI Calculation
+
+In 70% of cycles, the processor executes 2 instructions, so the CPI remains 0.5.
+
+In 30% of cycles, only 1 instruction is issued, making the effective CPI 1 for those cycles.
+
+{Effective CPI} = (0.7 \times 0.5) + (0.3 \times 1) = 0.35 + 0.3 = 0.65
+
+(b) Speedup Calculation
+{Speedup} = {Old CPI}/{New CPI} = {1.5}{0.65} \ 2.31
+
+So, the superscalar processor is 2.31 times faster than the scalar pipeline.
