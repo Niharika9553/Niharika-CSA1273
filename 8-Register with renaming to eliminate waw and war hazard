@@ -1,0 +1,34 @@
+Problem 11: Register Renaming to Eliminate WAW and WAR Hazards
+
+Consider the following instruction sequence:
+
+I1: ADD R1, R2, R3  
+I2: MUL R1, R4, R5  
+I3: SUB R6, R1, R7  
+I4: ADD R1, R8, R9
+
+Without register renaming, there are WAW (Write-After-Write) hazards and WAR (Write-After-Read) hazards.
+
+(a) Identify WAW and WAR hazards in the sequence.
+
+(b) Use register renaming to eliminate these hazards.
+
+Solution
+
+(a) Identifying Hazards
+
+WAW Hazard: I2 and I4 both write to R1. If I4 completes before I2, the result of I2 is lost.
+
+WAR Hazard: I3 reads R1, but I2 writes to R1, causing a conflict.
+
+
+(b) Applying Register Renaming
+
+We rename registers to avoid conflicts:
+
+I1: ADD R10, R2, R3   (Rename R1 → R10)  
+I2: MUL R11, R4, R5   (Rename R1 → R11)  
+I3: SUB R6, R10, R7   (Use R10 for correct dependency)  
+I4: ADD R12, R8, R9   (Rename R1 → R12)
+
+Now, there are no WAW or WAR hazards.
